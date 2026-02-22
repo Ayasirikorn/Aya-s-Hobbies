@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
+
+<meta charset="utf-8">
+<title>My Hobby</title>
+<link rel="stylesheet" href="Minigame.css">
+
+<style>
+  .game-container {
+    text-align: center;
+    margin-top:-125px
+}
+
+#gameArea {
+    width: 500px;
+    height: 400px;
+    margin: 40px auto;
+    border: 2px dashed #cdd0c7;
+    background-color: #1f2d38;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#star {
+    font-size: 40px;
+    position: absolute;
+    cursor: grabbing;
+    display: none;
+    transition: transform 0.2s;
+    z-index: 999;
+}
+
+#star:hover {
+    transform: scale(1.3);
+}
+
+#startBtn, #goBtn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #556139;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+    transition: 0.3s;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+}
+
+#bomb {
+    font-size: 40px;
+    position: absolute;
+    cursor: grabbing;
+    display: none;
+    transition: transform 0.2s;
+    z-index: 999;
+}
+
+#bomb:hover {
+    transform: scale(1.2);
+}
+
+    
+
+    </style>
+</head>
+
+
+
+<body style="zoom: 80%;">
+	<nav class="navbar">
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <button type="button" id="menu-toggle" onclick="menuFunction()">
+      My Hobbies
+    </button>
+
+    <div id="Dropdown" class="dropdown-content">
+      <a href="Hobby1.html">Attending Concert</a>
+      <a href="Hobby2.html">Writing</a>
+      <a href="Hobby3.html">Drawing</a>
+    </div>
+  </div>
+
+  <a href="Contact.html">Contact me</a>
+   <a href="Minigame.html">Minigame</a>
+</nav>
+
+
+
+<h2 style="text-align: center; margin-top: 200px;">My Minigame</h2>
+
+
+<div class="game-container">
+    <h2 class="topichead">Catch The Star ⭐</h2>
+    <br>
+    <h2>Game Rules 🎮</h2>
+    <p>
+        ⭐ Click <strong>Start Game</strong> to begin.<br>
+        ⏳ You have <strong>15 seconds</strong> to score as many points as possible.<br>
+        ⭐ Click the <strong>star</strong> to earn <strong>1 point</strong> each time.<br>
+        💣 Avoid clicking the <strong>bomb</strong> — it ends the game immediately!<br>
+        ⚡ The objects move quickly, so stay focused!
+
+    </p>
+    <p><strong>Try to beat your highest score! 🏆</strong></p>
+
+    <br><br>
+        <button id="goBtn">Go to the game</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+     <br>
+
+    <hr style="border: 2px dashed #556139; margin: 0 200px;">
+    <p style="font-size: 20px; font-weight: 600; color: #6f2e38;">
+      <br>
+    <br>
+    <br>
+    <br>
+  
+    Time<br><br><span id="time" style="font-size: 30px; font-weight: 700">15</span> s
+</p>
+    <p  style="font-size: 20px;">Score: <span id="score">0</span></p>
+
+    <div id="gameArea">
+        <div id="star">⭐</div>
+        <div id="bomb">💣</div>
+    </div>
+    <br>
+    <button id="startBtn">Start Game</button>
+</div>
+
+<BR><BR><BR><BR><BR><BR><BR>
+  <div style="text-align: center; margin-top: 50px;">
+    <p style="font-size: 30px; font-weight: 600; color: #6f2e38;">Thanks for playing ! 🎉</p>
+    <br><br>
+    <a href="index.html" style="text-decoration: underline; color: #162029; font-weight: 700; font-size: larger;"> >> Back to Home</a>
+
+
+    <button id="topBtn"><img src="btnup.png" alt="Top Button"></button>
+
+ <footer class="foot" style="width: 100%; position: relative; overflow: visible; bottom: 0px; margin-top: 200px;">
+ <img src="star2.PNG" style="position: absolute; right: 0; bottom: 0px; width: 450px; height: auto; z-index: 2;">
+    <div class="footer-bar" style="width: 100%; height: 60px; background-color: #a5535f;"></div>
+</footer>
+
+<script>
+		function menuFunction() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
+
+window.addEventListener("click", function(event) {
+  if (!event.target.closest(".dropdown")) {
+    document.getElementById("Dropdown").classList.remove("show");
+  }
+});
+
+
+function menuFunction() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
+
+window.addEventListener("click", function(event) {
+  if (!event.target.closest(".dropdown")) {
+    document.getElementById("Dropdown").classList.remove("show");
+  }
+});
+
+
+
+const goBtn = document.getElementById("goBtn");
+goBtn.addEventListener("click", () => {
+
+  window.scrollTo({ top: 650  });
+}); 
+
+
+const topBtn = document.getElementById("topBtn");
+
+
+
+window.addEventListener("scroll", () => {
+
+  topBtn.style.display = window.scrollY > 700 ? "block" : "none";
+
+});
+
+
+
+topBtn.addEventListener("click", () => {
+
+  window.scrollTo({ top: 0 });
+
+});
+
+
+
+const star = document.getElementById("star");
+const bomb = document.getElementById("bomb");
+const gameArea = document.getElementById("gameArea");
+const scoreDisplay = document.getElementById("score");
+const timeDisplay = document.getElementById("time");
+const startBtn = document.getElementById("startBtn");
+
+let score = 0;
+let timeLeft = 15;
+let gameInterval;
+let countdownInterval;
+
+startBtn.addEventListener("click", startGame);
+
+function startGame() {
+    score = 0;
+    timeLeft = 15;
+
+    scoreDisplay.textContent = score;
+    timeDisplay.textContent = timeLeft;
+
+    star.style.display = "block";
+    bomb.style.display = "block";
+    startBtn.disabled = true;
+
+    moveItems();
+
+    gameInterval = setInterval(moveItems, 800);
+
+    countdownInterval = setInterval(() => {
+        timeLeft--;
+        timeDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            endGame("Time's up!");
+        }
+    }, 1000);
+}
+
+function moveItems() {
+    moveElement(star);
+    moveElement(bomb);
+}
+
+function moveElement(element) {
+    const x = Math.random() * (gameArea.clientWidth - 40);
+    const y = Math.random() * (gameArea.clientHeight - 40);
+
+    element.style.left = x + "px";
+    element.style.top = y + "px";
+}
+
+star.addEventListener("click", function() {
+    score++;
+    scoreDisplay.textContent = score;
+});
+
+bomb.addEventListener("click", function() {
+    endGame("💣 BOOM! You clicked the bomb!");
+});
+
+function endGame(message) {
+    clearInterval(gameInterval);
+    clearInterval(countdownInterval);
+
+    star.style.display = "none";
+    bomb.style.display = "none";
+    startBtn.disabled = false;
+
+    alert(message + " Final score: " + score);
+
+    timeLeft = 15;
+    timeDisplay.textContent = timeLeft;
+
+   
+    score = 0;
+    scoreDisplay.textContent = score; }
+
+</script>
+</body>
+</html>

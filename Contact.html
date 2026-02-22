@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Hobby</title>
+<link rel="stylesheet" href="Contact.css">
+</head>
+
+<body style="zoom: 80%; justify-content: center;align-items: center; display: flex; flex-direction: column;">
+<nav class="navbar">
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <button type="button" id="menu-toggle" onclick="menuFunction()">
+      My Hobbies
+    </button>
+
+    <div id="Dropdown" class="dropdown-content">
+      <a href="Hobby1.html">Attending Concert</a>
+      <a href="Hobby2.html">Writing</a>
+      <a href="Hobby3.html">Drawing</a>
+    </div>
+  </div>
+
+  <a href="Contact.html">Contact me</a>
+   <a href="Minigame.html">Minigame</a>
+</nav>
+
+<div class="wrapper">
+
+<h1 class="topichead">CONTACT ME</h1>
+<div class="Contact" >
+    <div class="left">
+        <img src="me2.jpg" style="margin-bottom: 0;">
+    </div>
+
+    <div class="right">
+
+        <h2>Send me a message!</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+            <button type="submit">Send</button>
+        </form>
+
+    <div class="info-container">
+        <h3>More contact info :</h3>
+         <a href="https://www.instagram.com/mayamiayaa/"><p style="margin-top: -5px;">IG : MAYAMIAYAA</p></a>
+        <a href="https://x.com/Carrot3a"><p style="margin-top: -5px;">X : Carrot3a</p></a>
+    </div>
+
+    </div>
+</div>
+   
+
+<a href="index.html" style="text-decoration: underline; color: #162029; font-weight: 700; font-size: larger;"> >> Back to Home</a>
+</div>
+
+    <footer class="foot" style="width: 100%; position: relative; overflow: visible; bottom: 0px;">
+ <img src="star2.PNG" style="position: absolute; right: 0; bottom: 0px; width: 450px; height: auto; z-index: 2;">
+    <div class="footer-bar" style="width: 100%; height: 60px; background-color: #a5535f;"></div>
+</footer>
+
+</div>
+    <script>
+
+function menuFunction() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
+
+window.addEventListener("click", function(event) {
+  if (!event.target.closest(".dropdown")) {
+    document.getElementById("Dropdown").classList.remove("show");
+  }
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    
+    const name = this.elements["name"].value;
+
+    alert("Thank you, " + name + "! Your message has been sent 💌");
+
+    this.reset(); 
+});
+
+const topBtn = document.getElementById("topBtn");
+
+
+
+window.addEventListener("scroll", () => {
+
+  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+
+});
+
+
+
+topBtn.addEventListener("click", () => {
+
+  window.scrollTo({ top: 0 });
+
+});
+
+</script>
+
+</body>
+</html>
